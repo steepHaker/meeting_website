@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="cat_product_area section_gap">
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-lg-9">
+                <div class="billing_details">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h1>Messages with {{ username }}</h1>
+                            <div id="message-list">
+                                {% for message in messages %}
+                                    <div class="message {% if message.sender == request.user %}sent-message{% else %}received-message{% endif %}">{{ message.messagetext }}</div>
+                                {% endfor %}
+                            </div>
+                            <div class="send-button-css">
+                                <input type="text" id="message-input" required>
+                                <button id="send-button" class="main_btn recipient-button"
+                                    data-username="{{ username }}">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="left_sidebar_area">
+                    {% include 'userinfo/menu/leftbar.html'%}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    var outerContainer = document.getElementById('message-list');
+
+    outerContainer.scrollTop = outerContainer.scrollHeight;
+</script>
+
+{% endblock content %}
