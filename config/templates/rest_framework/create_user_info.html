@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+config/templates/rest_framework/user_info.html
+<section class="cat_product_area section_gap">
+  <div class="container">
+    <div class="row flex-row-reverse">
+      <div class="col-lg-9">
+       
+      
+              <h1>Fill in information about yourself</h1>
+
+              <div class="billing_details">
+                <div class="row">
+                  <div class="col-lg-8">
+                    
+                  <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Save Changes</button>
+            </form>
+                  </div>
+               
+                </div>
+              </div>
+
+              
+            </div>
+        
+      <div class="col-lg-3">
+        <div class="left_sidebar_area">
+          {% include 'userinfo/menu/leftbar.html'%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
