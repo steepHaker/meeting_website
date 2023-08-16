@@ -1,0 +1,29 @@
+<aside class="left_widgets p_filter_widgets">
+  <div class="l_w_title">
+    <h3>Menu</h3>
+  </div>
+  <div class="widgets_inner">
+    <ul class="list">
+      <li>
+        <a href="{% url 'acquaintance' %}">Acquaintance</a>
+      </li>
+      <li>
+        <a href="{% url 'profile' %}">profile</a>
+      </li>
+    </ul>
+  </div>
+  <div class="l_w_title">
+    <h3>Messages</h3>
+  </div>
+  <div class="widgets_inner">
+    <ul class="list">
+      {% for user in users %}
+        <li>
+          <a href="{% url 'chat_with_user' user.username %}">{{ user.username }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</aside>
+
+   
