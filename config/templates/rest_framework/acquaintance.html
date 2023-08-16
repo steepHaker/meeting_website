@@ -1,0 +1,63 @@
+config/templates/rest_framework/acquaintance.html
+{% extends "base.html" %}
+{% block content %}
+<section class="cat_product_area section_gap">
+  <div class="container">
+    <div class="row flex-row-reverse">
+      <div class="col-lg-9">
+        <div class="product_top_bar">
+          <div class="left_dorp">
+            <select class="sorting">
+              <option value="1">Default sorting</option>
+              <option value="2">Default sorting 01</option>
+              <option value="4">Default sorting 02</option>
+            </select>
+            <select class="show">
+              <option value="1">Show 12</option>
+              <option value="2">Show 14</option>
+              <option value="4">Show 16</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="latest_product_inner">
+          <div class="row">
+              {% for user_info in all_users_info %}
+              <div class="col-lg-4 col-md-6">
+                  <div class="single-product">
+                      <div class="product-img">
+                          <!-- Здесь выведите фото пользователя -->
+                          <img class="card-img" src="{{ user_info.image.url }}" alt="" />
+                      </div>
+                      <div class="product-btm">
+                          <a href="{% url 'user_details' user_id=user_info.myuser.id %}">
+                              <!-- Здесь выведите никнейм и возраст пользователя -->
+                             <h4>{{ user_info.myuser.username }} <span class="mr-4"> {{ user_info.age }}</span></h4>
+                          </a>
+                          <div class="mt-3">
+                              <!-- Здесь выведите пол пользователя -->
+                         
+                              <!-- Если у пользователя есть город, выведите его тоже -->
+                              {% if user_info.city %}
+                              <span>{{ user_info.city }}</span>
+                              {% endif %}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+      </div>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="left_sidebar_area">
+          {% include 'userinfo/menu/leftbar.html' %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
