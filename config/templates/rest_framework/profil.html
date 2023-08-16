@@ -1,0 +1,172 @@
+config/templates/rest_framework/acquaintance.html ffffff
+{% extends "base.html" %}
+{% block content %}
+<section class="cat_product_area section_gap">
+  <div class="container">
+    <div class="row flex-row-reverse">
+      <div class="col-lg-9">
+        <div class="product_top_bar">
+          <div class="left_dorp">
+            <select class="sorting">
+              <option value="1">Default sorting</option>
+              <option value="2">Default sorting 01</option>
+              <option value="4">Default sorting 02</option>
+            </select>
+            <select class="show">
+              <option value="1">Show 12</option>
+              <option value="2">Show 14</option>
+              <option value="4">Show 16</option>
+            </select>
+          </div>
+        </div>
+        <div class="row contact_form">
+
+          <div class="col-md-6 form-group p_star">
+            <div class="latest_product_inner">
+              <div class="row">
+                <div>
+                  <h1>Личная информация</h1>
+                  <!-- Здесь выведите фото пользователя -->
+                  <img class="card-img" src="{{ userinfo.image.url }}" alt="" />
+                  <div class="product_top_bar about_me">
+                    <div class="left_dorp">
+                      <h3 >About me</h3> <span>{{ userinfo.aboutme }}</span> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="order_box">
+              <!-- <h2>Your Order</h2> -->
+              <ul class="list">
+                <li>
+                  <a href="#">
+                    <h4>Nickname:
+                      <span>{{ userinfo.nikname }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">age:
+                    <span class="last">{{ userinfo.age }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Country:
+                    <span class="last">{{ userinfo.country }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Gender:
+                    <span class="last"> {{ userinfo.gender }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Height:
+                    <span class="last"> {{ userinfo.height }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Weight
+                    <span class="last">{{ userinfo.weight }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Smoking:
+                    <span class="last">{{ userinfo.smoking }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Alcohol
+                    <span class="last">{{ userinfo.alcohol }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Children:
+                    <span class="last">{{ userinfo.children }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Ethnicity
+                    <span class="last">{{ userinfo.ethnicity }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Horoscope:
+                    <span class="last">{{ userinfo.horoscope }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Favorite pets:
+                    <span class="last">{{ userinfo.favoritepets }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">favorite films:
+                    <span class="last">{{ userinfo.favoritefilms }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">favorite music
+                    <span class="last">{{ userinfo.favoritemusic }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Favorite books
+                    <span class="last">{{ userinfo.favoritebooks }}</span>
+                  </a>
+                </li>
+                <li class="about_me_block">
+                  <a href="#"><h3>About me</h3> 
+                    <p>{{ userinfo.aboutme }}</p>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+         
+        </div>
+       
+
+      </div>
+      <div class="col-lg-3">
+        <div class="left_sidebar_area">
+          {% include 'userinfo/menu/leftbar_account.html' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+ <!-- <div class="col-md-6 form-group p_star">
+                  <div class="latest_product_inner">
+                    <div class="row">
+                      <div>
+                        <div class="userinf">
+                          <h1>обо мне </h1>
+                          <h4>Nickname: {{ userinfo.nikname }} age {{ userinfo.age }}</h4>
+                          <h4>Country: {{ userinfo.country }} </h4>
+                          <h4>City {{ userinfo.city }}</h4>
+                          <h4>Gender: {{ userinfo.gender }} </h4>
+                          <h4>Height: {{ userinfo.height }} </h4>
+                          <h4>Weight {{ userinfo.weight }}</h4>
+                          <h4>Smoking: {{ userinfo.smoking }} </h4>
+                          <h4>Alcohol {{ userinfo.alcohol }}</h4>
+                          <h4>Children: {{ userinfo.children }} </h4>
+                          <h4>Ethnicity {{ userinfo.ethnicity }}</р>
+                            <h4>Horoscope: {{ userinfo.horoscope }} </р>
+                              <h4>Favorite pets: {{ userinfo.favoritepets }} </р>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> --> 
+                <!-- <div class="userinfo">
+          <h4>favorite films: {{ userinfo.favoritefilms }} </h4>
+          <h4>favorite music {{ userinfo.favoritemusic }}</h4>
+          <h4> Favorite books {{ userinfo.favoritebooks }}</h4>
+          <h4>aboutme: {{ userinfo.aboutme }} </h4>
+        </div> -->
